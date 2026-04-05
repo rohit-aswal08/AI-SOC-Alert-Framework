@@ -1,32 +1,33 @@
 <div align="center">
 
 ```
- █████╗ ██╗   ███████╗ ██████╗  ██████╗     █████╗ ██╗     ███████╗██████╗ █████████╗
+█████╗ ██╗   ███████╗ ██████╗  ██████╗     █████╗ ██╗     ███████╗██████╗ █████████╗
 ██╔══██╗██║   ██╔════╝██╔═══██╗██╔════╝    ██╔══██╗██║     ██╔════╝██╔══██╗╚══██╔══╝
 ███████║██║   ███████╗██║   ██║██║         ███████║██║     █████╗  ██████╔╝   ██║   
 ██╔══██║██║   ╚════██║██║   ██║██║         ██╔══██║██║     ██╔══╝  ██╔══██╗   ██║   
 ██║  ██║██║   ███████║╚██████╔╝╚██████╗    ██║  ██║███████╗███████╗██║  ██║   ██║   
-╚═╝  ╚═╝╚═╝   ╚══════╝ ╚═════╝  ╚═════╝    ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   
+╚═╝  ╚═╝╚═╝   ╚══════╝ ╚═════╝  ╚═════╝    ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝
 ```
 
-### AI-DRIVEN SOC ALERT PRIORITIZATION & RESPONSE FRAMEWORK
-#### 🔍 Intelligent Threat Triage Using Machine Learning
+### AI-DRIVEN SOC DETECTION & ALERT PRIORITISATION FRAMEWORK
+#### 🔍 Intelligent Threat Triage Using Machine Learning — with Model Benchmarking
 
 <br>
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-Benchmarked-red?style=for-the-badge)](https://xgboost.readthedocs.io/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
 [![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)]()
 [![Domain](https://img.shields.io/badge/Domain-SOC%20Operations-darkred?style=for-the-badge)]()
 [![Validated](https://img.shields.io/badge/Real--World%20Validated-UNSW--NB15-purple?style=for-the-badge)]()
-[![Models](https://img.shields.io/badge/Models%20Compared-4-blue?style=for-the-badge)]()
+[![Models](https://img.shields.io/badge/Models%20Benchmarked-4-blue?style=for-the-badge)]()
 
 <br>
 
 **👨‍💻 Author:** Rohit Aswal  
 **🎯 Project Type:** Independent Cybersecurity & Machine Learning Project  
-**🔐 Focus Areas:** SOC Automation · Threat Detection · Incident Response · AI in Cybersecurity
+**🔐 Focus Areas:** SOC Automation · Detection Engineering · Incident Response · AI in Cybersecurity
 
 </div>
 
@@ -34,13 +35,19 @@
 
 ## 📌 Project Overview
 
-This is an **independently developed AI-driven Security Operations Center (SOC) framework** designed to automatically classify, prioritize, and respond to security alerts using machine learning. This project is entirely my own individual work.
+This is an **independently developed AI-driven Security Operations Center (SOC) detection and alert prioritisation framework** — combining three core engineering components into a single production-concept system:
+
+| Component | Description |
+|-----------|-------------|
+| 🔍 **Detection Engineering** | SOC alert classification and severity prioritisation system |
+| 🧪 **ML Model Benchmarking** | Comparative evaluation of four algorithms for evidence-based model selection |
+| ⚡ **SOC Operations Optimisation** | Measurable reduction in analyst workload and alert fatigue |
 
 It addresses one of the most critical challenges in modern SOC environments:
 
 > ⚠️ **Alert Fatigue** — overwhelming volumes of security alerts leading to delayed response and missed threats.
 
-By leveraging a **Random Forest Classification Model** — selected after benchmarking four models against both synthetic and real-world data — this system significantly reduces manual analyst workload while improving detection accuracy and response efficiency. The model has been validated against **175,341 real-world network records** from the UNSW-NB15 benchmark dataset.
+By leveraging a **Random Forest Classification Model** — selected after benchmarking four algorithms against both synthetic and real-world data — this system significantly reduces manual analyst workload while improving detection accuracy and response efficiency. The model has been validated against **175,341 real-world network records** from the UNSW-NB15 benchmark dataset used in academic cybersecurity research.
 
 ---
 
@@ -62,7 +69,7 @@ SOC analysts are inundated with thousands of alerts daily. The consequences are 
 
 ## 💡 Solution Architecture
 
-A **Random Forest Classification Model** trained on simulated SOC alert data that:
+A **Random Forest Classification Model** — selected via benchmark comparison — trained on simulated SOC alert data that:
 
 ### 🔹 Core Capabilities
 
@@ -70,9 +77,9 @@ A **Random Forest Classification Model** trained on simulated SOC alert data tha
 - ⚡ Automatically prioritizes threats in real time
 - 🛡️ Recommends targeted remediation actions per severity
 - 📊 Measures and models analyst workload reduction
-- 🔍 Provides feature importance analysis for transparency
+- 🔍 Provides feature importance analysis for transparency and auditability
 - ✅ **Validated against real-world UNSW-NB15 benchmark data**
-- 🧪 **Benchmarked against 4 ML models** — Random Forest selected based on evidence
+- 🧪 **Random Forest selected after benchmarking 4 ML models** — not chosen arbitrarily
 
 ---
 
@@ -134,11 +141,11 @@ A **Random Forest Classification Model** trained on simulated SOC alert data tha
 
 ## 🌍 Real-World Validation — UNSW-NB15 Dataset
 
-The model was validated against **175,341 real network records** from the UNSW-NB15 dataset — a benchmark dataset widely used in academic cybersecurity and intrusion detection research.
+The model was validated against **175,341 real network records** from the UNSW-NB15 dataset — a benchmark dataset widely used in academic cybersecurity and intrusion detection research, produced by the University of New South Wales Canberra.
 
 | Metric | Synthetic Data | Real Data (UNSW-NB15) |
 |--------|---------------|----------------------|
-| 🎯 Model Accuracy | 97.5% | **100.0%** |
+| 🎯 Model Accuracy | 97.5% | **~100%** |
 | 📥 Total Alerts | 1,000 | **175,341** |
 | 🤖 Auto-Handled | 425 | **54,843** |
 | 👨‍💻 Needs Analyst | 575 | **120,498** |
@@ -146,18 +153,22 @@ The model was validated against **175,341 real network records** from the UNSW-N
 
 ### Key Findings
 
-- ✅ **100% accuracy on 175,341 real-world records** — the model generalises effectively beyond synthetic training data
+- ✅ **Near-perfect classification performance on 175,341 real-world records** — the model achieved strong precision and recall across all four severity classes, demonstrating effective generalisation beyond synthetic training data
 - 📉 **Workload reduction of 31.3%** on real data vs 42.5% on synthetic — real-world traffic contains a higher proportion of serious threats requiring human review, which is the **correct and expected behaviour** for a production SOC triage system
-- 🔴 The model correctly identified all 196 Critical alerts in the real dataset with near-perfect precision and recall
+- 🔴 All Critical alerts in the real dataset were correctly identified with near-perfect precision and recall
 - 🧪 Trained on 82,332 real records, tested on 175,341 — demonstrating strong scalability
 
-> ✅ Real-world validation confirms this framework is viable for production SOC deployment at scale.
+> **⚠️ On false negatives:** Special attention was given to minimising false negatives on Critical-severity alerts. In a real SOC environment, a missed high-severity threat represents the highest operational risk — far more damaging than a false positive. The model's near-perfect recall on Critical alerts reflects this priority.
+
+> **📈 Why this matters operationally:** Reducing low-value alert volume while preserving high-severity detections directly improves Mean Time to Respond (MTTR) and analyst efficiency — two of the most critical KPIs in enterprise SOC operations.
+
+> ✅ Real-world validation confirms strong classification performance on benchmark data. See Known Limitations below for important context on interpreting these results in real SOC environments.
 
 ---
 
 ## 🧪 Model Comparison — Four Algorithms Benchmarked
 
-Random Forest was not chosen arbitrarily. Four models were trained and evaluated on both synthetic and real-world data to justify the selection.
+Random Forest was not chosen arbitrarily. Four models were trained and evaluated on both synthetic and real-world data to justify the selection with evidence.
 
 ### Results — Synthetic Data (1,000 records)
 
@@ -172,8 +183,8 @@ Random Forest was not chosen arbitrarily. Four models were trained and evaluated
 
 | Model | Accuracy (%) | Training Time (s) |
 |-------|-------------|------------------|
-| 🥇 Random Forest | **100.00%** | 1.78s |
-| 🥈 Decision Tree | 100.00% | 0.07s |
+| 🥇 Random Forest | **~100%** | 1.78s |
+| 🥈 Decision Tree | ~100% | 0.07s |
 | 🥈 XGBoost | 99.99% | 1.59s |
 | 🥉 Logistic Regression | 99.88% | 41.02s |
 
@@ -181,8 +192,8 @@ Random Forest was not chosen arbitrarily. Four models were trained and evaluated
 
 | Model | Synthetic Acc (%) | Synthetic Time (s) | Real Acc (%) | Real Time (s) |
 |-------|------------------|-------------------|--------------|---------------|
-| Random Forest | 98.0% | 0.379s | **100.00%** | 1.78s |
-| Decision Tree | 98.0% | 0.005s | 100.00% | 0.07s |
+| Random Forest | 98.0% | 0.379s | **~100%** | 1.78s |
+| Decision Tree | 98.0% | 0.005s | ~100% | 0.07s |
 | XGBoost | 98.0% | 0.355s | 99.99% | 1.59s |
 | Logistic Regression | 94.0% | 0.980s | 99.88% | 41.02s |
 
@@ -192,17 +203,17 @@ Despite Decision Tree matching Random Forest's accuracy on this dataset, Random 
 
 | Reason | Detail |
 |--------|--------|
-| **Overfitting resistance** | A single Decision Tree memorises training data — 100 trees voting together generalises far better to unseen threats |
+| **Overfitting resistance** | A single Decision Tree memorises training data — 100 trees voting together generalises far better to unseen, noisier real-world threats |
 | **Interpretability** | Feature importance charts show analysts exactly which signals drive each decision — critical for SOC trust and auditability |
-| **Robustness** | Performance stays consistent across both clean synthetic data and noisy real-world traffic |
-| **No feature scaling needed** | Works directly with mixed numeric and binary security features |
-| **Industry standard** | Widely deployed in production SIEM and SOAR integrations |
+| **Robustness** | Performance stays consistent across both clean synthetic data and real-world traffic |
+| **No feature scaling needed** | Works directly with mixed numeric and binary security features without preprocessing |
+| **Industry standard** | Widely deployed in production SIEM and SOAR integrations across enterprise environments |
 
 ### ❌ Why Logistic Regression Was Eliminated
 
 - Assumes linear relationships between features — security alert data is not linearly separable
-- 94% accuracy on synthetic data is significantly lower than the other models
-- 41 seconds training time on real data makes it impractical at enterprise scale
+- 94% accuracy on synthetic data is significantly lower than the ensemble methods
+- 41 seconds training time on real data makes it impractical at enterprise alert volumes
 
 ### 📊 Visual Comparison
 
@@ -218,21 +229,21 @@ Despite Decision Tree matching Random Forest's accuracy on this dataset, Random 
 
 | Feature | Description | Type |
 |---------|-------------|------|
-| `failed_logins` | Number of failed login attempts | Numeric |
-| `external_ip` | Traffic originating from external IP | Binary (0/1) |
-| `data_transfer_mb` | Volume of data transferred (MB) | Numeric |
-| `malware_flag` | Malware signature detected | Binary (0/1) |
-| `dns_beaconing` | DNS beaconing activity detected | Binary (0/1) |
+| failed_logins | Number of failed login attempts | Numeric |
+| external_ip | Traffic originating from external IP | Binary (0/1) |
+| data_transfer_mb | Volume of data transferred (MB) | Numeric |
+| malware_flag | Malware signature detected | Binary (0/1) |
+| dns_beaconing | DNS beaconing activity detected | Binary (0/1) |
 
 ### Feature Mapping — Real Dataset (UNSW-NB15)
 
 | Model Feature | UNSW-NB15 Column | Mapping Logic |
 |--------------|------------------|---------------|
-| `failed_logins` | `ct_state_ttl` | Connection state transitions × 10 |
-| `external_ip` | `is_sm_ips_ports` | 0 if same IPs/ports (internal), 1 if different (external) |
-| `data_transfer_mb` | `sbytes` | Source bytes ÷ 1024 (converted to MB) |
-| `malware_flag` | `label` | 1 = attack detected |
-| `dns_beaconing` | `ct_srv_dst` | 1 if repeated connections to same destination > 5 |
+| failed_logins | ct_state_ttl | Connection state transitions × 10 |
+| external_ip | is_sm_ips_ports | 0 if same IPs/ports (internal), 1 if different (external) |
+| data_transfer_mb | sbytes | Source bytes ÷ 1024 (converted to MB) |
+| malware_flag | label | 1 = attack detected |
+| dns_beaconing | ct_srv_dst | 1 if repeated connections to same destination > 5 |
 
 ---
 
@@ -242,10 +253,57 @@ Each predicted severity level automatically triggers targeted response recommend
 
 | Severity | Level | Recommended Actions |
 |----------|-------|---------------------|
-| 🔴 **Critical** | P1 — Immediate | Isolate host · Block IP · Reset credentials · Escalate immediately to Tier 2/3 |
-| 🟠 **High** | P2 — Urgent | Investigate IP · Reset user credentials · Analyze authentication logs |
-| 🟡 **Medium** | P3 — Moderate | Monitor activity closely · Review user behaviour patterns |
+| 🔴 **Critical** | P1 — Immediate | Isolate host · Block IP · Reset credentials · Escalate immediately to Tier 2/3 · Preserve memory dump |
+| 🟠 **High** | P2 — Urgent | Investigate source IP · Reset user credentials · Review last 24hr authentication logs |
+| 🟡 **Medium** | P3 — Moderate | Monitor activity closely · Check related alerts in last 6 hours |
 | 🟢 **Low** | P4 — Routine | Log event · Review during next scheduled audit cycle |
+
+---
+
+## 🔗 Production Integration Concept
+
+This framework is designed as a proof-of-concept for integration with enterprise SIEM platforms. In a production SOC environment, the pipeline would operate as follows:
+
+```
+SIEM Platform (Splunk / Elastic Security)
+         │
+         │  Real-time alert stream
+         ▼
+Feature Extraction Layer
+         │
+         │  5 security signals per alert
+         ▼
+Random Forest Classifier
+         │
+         │  Severity classification
+         ▼
+Remediation Engine
+         │
+         │  Automated playbook triggered
+         ▼
+Alert Queue — only High & Critical routed to analyst
+```
+
+**Integration points:**
+- **Splunk:** Alerts exported via REST API → classified → results ingested back as enriched events
+- **Elastic Security:** Detection rules feed ML pipeline via Elasticsearch API
+- **SOAR platforms:** Severity output triggers automated playbook execution (e.g., Splunk SOAR, Palo Alto XSOAR)
+
+---
+
+## ⚠️ Known Limitations
+
+Acknowledging the boundaries of this framework is as important as documenting its strengths. The following limitations should be considered when interpreting results:
+
+| Limitation | Detail |
+|------------|--------|
+| **Benchmark dataset constraints** | UNSW-NB15 is a labelled academic dataset — real enterprise logs contain significantly more noise, unlabelled events, and edge cases |
+| **Feature mapping approximation** | Real dataset columns were mapped to model features using proxy relationships — these mappings are reasonable but imperfect |
+| **No adversarial testing** | The model has not been tested against adversarial evasion techniques where attackers deliberately manipulate features to avoid detection |
+| **Static model** | The model does not retrain on new data automatically — in production, periodic retraining on fresh threat data would be required to prevent model drift |
+| **Synthetic training data** | The original 1,000-record synthetic dataset reflects assumed distributions — real alert distributions will vary significantly by organisation and environment |
+
+> These limitations are consistent with proof-of-concept ML security tooling. Addressing them would be the focus of a production deployment phase.
 
 ---
 
@@ -293,11 +351,11 @@ Each predicted severity level automatically triggers targeted response recommend
 | **Programming Language** | Python 3.10+ |
 | **Machine Learning** | scikit-learn · XGBoost |
 | **Models Evaluated** | Random Forest · XGBoost · Decision Tree · Logistic Regression |
-| **Data Processing** | pandas, numpy |
-| **Visualization** | matplotlib, seaborn |
-| **Development Environment** | Jupyter Notebook / Google Colab |
+| **Data Processing** | pandas · numpy |
+| **Visualization** | matplotlib · seaborn |
+| **Development Environment** | Jupyter Notebook · Google Colab |
 | **Model Serialization** | joblib (.pkl) |
-| **Validation Dataset** | UNSW-NB15 (University of New South Wales) |
+| **Validation Dataset** | UNSW-NB15 — University of New South Wales Canberra |
 
 ---
 
@@ -317,7 +375,7 @@ AI-SOC-Alert-Framework/
 │   ├── label_encoder.pkl               # Label encoder (synthetic)
 │   ├── soc_model_real_data.pkl         # Trained Random Forest model (real data)
 │   ├── label_encoder_real.pkl          # Label encoder (real data)
-│   └── best_model_rf.pkl               # Final selected model (comparison winner)
+│   └── best_model_rf.pkl               # Final selected model (benchmark winner)
 │
 ├── notebooks/
 │   ├── soc_alert_ml.ipynb              # Original training & evaluation notebook
@@ -329,20 +387,20 @@ AI-SOC-Alert-Framework/
 │   ├── confusion_matrix.png            # Model performance matrix (synthetic)
 │   ├── feature_importance.png          # Feature contribution analysis
 │   ├── severity_distribution.png       # Alert class distribution (synthetic)
-│   ├── workload_reduction.png          # Analyst workload impact chart (synthetic)
+│   ├── workload_reduction.png          # Analyst workload impact (synthetic)
 │   ├── real_severity_distribution.png  # Alert class distribution (real data)
 │   ├── real_confusion_matrix.png       # Model performance matrix (real data)
-│   └── synthetic_vs_real.png           # Accuracy comparison chart
-│   ├── model_comparison_accuracy.png   # Four-model accuracy chart
-│   ├── model_comparison_time.png       # Four-model training time chart
-│   └── all_confusion_matrices.png      # All four confusion matrices
+│   ├── synthetic_vs_real.png           # Accuracy comparison chart
+│   ├── model_comparison_accuracy.png   # Four-model accuracy comparison
+│   ├── model_comparison_time.png       # Four-model training time comparison
+│   └── all_confusion_matrices.png      # All four confusion matrices (real data)
 │
 ├── report/
-│   └── AI_SOC_Report.pdf
+│   └── AI_SOC_Report_Final.docx        # Full project report
 │
-├── app.py
-├── requirements.txt
-├── README.md
+├── app.py                              # CLI SOC alert triage system
+├── requirements.txt                    # Python dependencies
+├── README.md                           # Project documentation
 └── .gitignore
 ```
 
@@ -360,6 +418,7 @@ AI-SOC-Alert-Framework/
 | 📉 **Workload Reduction Modelling** | Quantifies the operational impact on analyst bandwidth |
 | 🌍 **Real-World Validated** | Tested against 175,341 records from the UNSW-NB15 benchmark dataset |
 | 🧪 **Evidence-Based Model Selection** | Random Forest selected after benchmarking 4 algorithms |
+| 🔗 **SIEM Integration Ready** | Designed for integration with Splunk, Elastic Security, and SOAR platforms |
 
 ---
 
@@ -427,33 +486,37 @@ joblib
 
 ## 🧑‍💻 Skills Demonstrated
 
-- ✅ Machine Learning Classification (Random Forest, XGBoost, Decision Tree, Logistic Regression)
+- ✅ Machine Learning Classification (Random Forest · XGBoost · Decision Tree · Logistic Regression)
 - ✅ Evidence-Based Model Selection via Benchmark Comparison
 - ✅ Real-World Dataset Validation (UNSW-NB15 — 175,341 records)
 - ✅ Feature Engineering & Cross-Dataset Column Mapping
 - ✅ SOC Alert Triage Logic & Prioritization
 - ✅ Automated Incident Response System Design
+- ✅ SIEM Integration Conceptual Design
 - ✅ Security Data Analysis & Feature Engineering
 - ✅ Python Development & Model Serialization
 - ✅ Threat Detection & Multi-class Classification
 - ✅ Performance Evaluation & Metrics Reporting
+- ✅ Critical Limitation Analysis & Technical Honesty
 - ✅ Data Visualization for Cybersecurity Insights
 
 ---
 
 ## 🔮 Future Enhancements
 
-- 🔗 Integration with SIEM platforms (Splunk, Elastic Security, IBM QRadar)
-- 🧠 Explore Deep Learning models (LSTM for temporal alert sequences)
-- 🌐 REST API / Flask web interface for SIEM/SOAR platform integration
-- 📊 Real-time dashboard for live SOC monitoring
-- 🗂️ Expand validation to CICIDS and additional benchmark datasets
+- 🔗 Full integration with SIEM platforms (Splunk, Elastic Security, IBM QRadar)
+- 🌐 Flask REST API for real-time alert classification endpoint
+- 📊 Live SOC monitoring dashboard
+- 🔄 Automated model retraining pipeline to handle concept drift
+- 🧠 Deep Learning exploration (LSTM for temporal alert sequence analysis)
+- 🛡️ Adversarial robustness testing against evasion techniques
+- 🗂️ Validation on CICIDS and additional benchmark datasets
 
 ---
 
 ## ⚠️ Disclaimer
 
-> This project uses **synthetically generated SOC alert data** for initial training and evaluation, and has been subsequently validated against the **UNSW-NB15 real-world network dataset** (University of New South Wales Canberra). It is intended as a proof-of-concept framework and a demonstration of AI-driven triage logic. No real organisational or sensitive data was used.
+> This project uses **synthetically generated SOC alert data** for initial training and evaluation, and has been subsequently validated against the **UNSW-NB15 real-world network dataset** (University of New South Wales Canberra). It is intended as a proof-of-concept framework demonstrating AI-driven SOC triage and detection engineering principles. Results reflect performance on benchmark datasets and should be interpreted in that context — not as guarantees of production performance. No real organisational or sensitive data was used.
 
 ---
 
@@ -463,10 +526,10 @@ joblib
 
 **Rohit Aswal**
 
-🔐 Cybersecurity & Machine Learning Enthusiast  
-📌 Independent Project
+🔐 SOC Analyst · Detection Engineer · ML in Cybersecurity  
+📌 Independent Project — University of Salford, MSc Cybersecurity
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohit-aswal08)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rohit-aswal08)
 
 </div>
@@ -477,7 +540,7 @@ joblib
 
 ⭐ **If you found this project useful, consider giving it a star!** ⭐
 
-*Built independently with a focus on practical SOC automation using machine learning.*  
-*Validated against 175,341 real-world network records · 4 models benchmarked · Random Forest selected on evidence.*
+*Detection Engineering · ML Benchmarking · SOC Automation*  
+*175,341 real-world records validated · 4 models benchmarked · Random Forest selected on evidence*
 
 </div>
