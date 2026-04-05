@@ -20,6 +20,7 @@
 [![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)]()
 [![Domain](https://img.shields.io/badge/Domain-SOC%20Operations-darkred?style=for-the-badge)]()
 [![Validated](https://img.shields.io/badge/Real--World%20Validated-UNSW--NB15-purple?style=for-the-badge)]()
+[![Models](https://img.shields.io/badge/Models%20Compared-4-blue?style=for-the-badge)]()
 
 <br>
 
@@ -39,7 +40,7 @@ It addresses one of the most critical challenges in modern SOC environments:
 
 > ⚠️ **Alert Fatigue** — overwhelming volumes of security alerts leading to delayed response and missed threats.
 
-By leveraging a **Random Forest Classification Model**, this system significantly reduces manual analyst workload while improving detection accuracy and response efficiency. The model has been validated against **175,341 real-world network records** from the UNSW-NB15 benchmark dataset used in academic cybersecurity research.
+By leveraging a **Random Forest Classification Model** — selected after benchmarking four models against both synthetic and real-world data — this system significantly reduces manual analyst workload while improving detection accuracy and response efficiency. The model has been validated against **175,341 real-world network records** from the UNSW-NB15 benchmark dataset.
 
 ---
 
@@ -71,6 +72,7 @@ A **Random Forest Classification Model** trained on simulated SOC alert data tha
 - 📊 Measures and models analyst workload reduction
 - 🔍 Provides feature importance analysis for transparency
 - ✅ **Validated against real-world UNSW-NB15 benchmark data**
+- 🧪 **Benchmarked against 4 ML models** — Random Forest selected based on evidence
 
 ---
 
@@ -90,7 +92,8 @@ A **Random Forest Classification Model** trained on simulated SOC alert data tha
                        ▼
           ┌──────────────────────────┐
           │ Random Forest Classifier │
-          │   (100% Real-World Acc.) │
+          │ Selected after 4-model   │
+          │ benchmark comparison     │
           └────────────┬─────────────┘
                        │
         ┌──────────────┼──────────────┬──────────────┐
@@ -152,6 +155,65 @@ The model was validated against **175,341 real network records** from the UNSW-N
 
 ---
 
+## 🧪 Model Comparison — Four Algorithms Benchmarked
+
+Random Forest was not chosen arbitrarily. Four models were trained and evaluated on both synthetic and real-world data to justify the selection.
+
+### Results — Synthetic Data (1,000 records)
+
+| Model | Accuracy (%) | Training Time (s) |
+|-------|-------------|------------------|
+| 🥇 Random Forest | **98.0%** | 0.379s |
+| 🥈 XGBoost | 98.0% | 0.355s |
+| 🥈 Decision Tree | 98.0% | 0.005s |
+| 🥉 Logistic Regression | 94.0% | 0.980s |
+
+### Results — Real Data (175,341 records — UNSW-NB15)
+
+| Model | Accuracy (%) | Training Time (s) |
+|-------|-------------|------------------|
+| 🥇 Random Forest | **100.00%** | 1.78s |
+| 🥈 Decision Tree | 100.00% | 0.07s |
+| 🥈 XGBoost | 99.99% | 1.59s |
+| 🥉 Logistic Regression | 99.88% | 41.02s |
+
+### Full Comparison Table
+
+| Model | Synthetic Acc (%) | Synthetic Time (s) | Real Acc (%) | Real Time (s) |
+|-------|------------------|-------------------|--------------|---------------|
+| Random Forest | 98.0% | 0.379s | **100.00%** | 1.78s |
+| Decision Tree | 98.0% | 0.005s | 100.00% | 0.07s |
+| XGBoost | 98.0% | 0.355s | 99.99% | 1.59s |
+| Logistic Regression | 94.0% | 0.980s | 99.88% | 41.02s |
+
+### ✅ Why Random Forest Was Selected
+
+Despite Decision Tree matching Random Forest's accuracy on this dataset, Random Forest was selected as the production model for the following reasons:
+
+| Reason | Detail |
+|--------|--------|
+| **Overfitting resistance** | A single Decision Tree memorises training data — 100 trees voting together generalises far better to unseen threats |
+| **Interpretability** | Feature importance charts show analysts exactly which signals drive each decision — critical for SOC trust and auditability |
+| **Robustness** | Performance stays consistent across both clean synthetic data and noisy real-world traffic |
+| **No feature scaling needed** | Works directly with mixed numeric and binary security features |
+| **Industry standard** | Widely deployed in production SIEM and SOAR integrations |
+
+### ❌ Why Logistic Regression Was Eliminated
+
+- Assumes linear relationships between features — security alert data is not linearly separable
+- 94% accuracy on synthetic data is significantly lower than the other models
+- 41 seconds training time on real data makes it impractical at enterprise scale
+
+### 📊 Visual Comparison
+
+![Model Accuracy Comparison](screenshots/model_comparison_accuracy.png)
+
+![Model Training Time Comparison](screenshots/model_comparison_time.png)
+
+![All Confusion Matrices](screenshots/all_confusion_matrices.png)
+
+---
+
 ## 🧠 Features Used in the Model
 
 | Feature | Description | Type |
@@ -192,40 +254,35 @@ Each predicted severity level automatically triggers targeted response recommend
 ### 📊 Dataset Preview
 ![Dataset Preview](screenshots/dataset_preview.png)
 
----
-
 ### 📈 Severity Distribution — Synthetic Data
 ![Severity Distribution](screenshots/severity_distribution.png)
-
----
 
 ### 📈 Severity Distribution — Real Data (UNSW-NB15)
 ![Real Severity Distribution](screenshots/real_severity_distribution.png)
 
----
-
 ### 🔍 Confusion Matrix — Synthetic Data
 ![Confusion Matrix](screenshots/confusion_matrix.png)
-
----
 
 ### 🔍 Confusion Matrix — Real Data (UNSW-NB15)
 ![Real Confusion Matrix](screenshots/real_confusion_matrix.png)
 
----
-
 ### 🧬 Feature Importance
 ![Feature Importance](screenshots/feature_importance.png)
-
----
 
 ### ⚡ Workload Reduction — Synthetic Data
 ![Workload Reduction](screenshots/workload_reduction.png)
 
----
-
-### 📊 Synthetic vs Real-World Accuracy Comparison
+### 📊 Synthetic vs Real-World Accuracy
 ![Synthetic vs Real Accuracy](screenshots/synthetic_vs_real.png)
+
+### 🏆 Four-Model Accuracy Comparison
+![Model Comparison Accuracy](screenshots/model_comparison_accuracy.png)
+
+### ⏱️ Four-Model Training Time Comparison
+![Model Comparison Time](screenshots/model_comparison_time.png)
+
+### 🔍 All Four Confusion Matrices — Real Data
+![All Confusion Matrices](screenshots/all_confusion_matrices.png)
 
 ---
 
@@ -234,7 +291,8 @@ Each predicted severity level automatically triggers targeted response recommend
 | Category | Tools & Technologies |
 |----------|----------------------|
 | **Programming Language** | Python 3.10+ |
-| **Machine Learning** | scikit-learn (Random Forest Classifier) |
+| **Machine Learning** | scikit-learn · XGBoost |
+| **Models Evaluated** | Random Forest · XGBoost · Decision Tree · Logistic Regression |
 | **Data Processing** | pandas, numpy |
 | **Visualization** | matplotlib, seaborn |
 | **Development Environment** | Jupyter Notebook / Google Colab |
@@ -251,17 +309,20 @@ AI-SOC-Alert-Framework/
 ├── data/
 │   ├── soc_alerts.csv                  # Synthetic SOC alert dataset (1,000 records)
 │   ├── UNSW_NB15_training-set.csv      # Real-world training data (82,332 records)
-│   └── UNSW_NB15_testing-set.csv       # Real-world testing data (175,341 records)
+│   ├── UNSW_NB15_testing-set.csv       # Real-world testing data (175,341 records)
+│   └── model_comparison_results.csv    # Four-model benchmark results
 │
 ├── model/
 │   ├── soc_alert_model.pkl             # Trained Random Forest model (synthetic)
-│   ├── label_encoder.pkl               # Label encoder for severity classes (synthetic)
+│   ├── label_encoder.pkl               # Label encoder (synthetic)
 │   ├── soc_model_real_data.pkl         # Trained Random Forest model (real data)
-│   └── label_encoder_real.pkl          # Label encoder for severity classes (real data)
+│   ├── label_encoder_real.pkl          # Label encoder (real data)
+│   └── best_model_rf.pkl               # Final selected model (comparison winner)
 │
 ├── notebooks/
-│   ├── soc_alert_ml.ipynb              # Original training, evaluation & analysis notebook
-│   └── real_data_test.ipynb            # Real-world UNSW-NB15 validation notebook
+│   ├── soc_alert_ml.ipynb              # Original training & evaluation notebook
+│   ├── real_data_test.ipynb            # Real-world UNSW-NB15 validation notebook
+│   └── model_comparison.ipynb          # Four-model benchmark comparison notebook
 │
 ├── screenshots/
 │   ├── dataset_preview.png             # Dataset structure overview
@@ -272,13 +333,16 @@ AI-SOC-Alert-Framework/
 │   ├── real_severity_distribution.png  # Alert class distribution (real data)
 │   ├── real_confusion_matrix.png       # Model performance matrix (real data)
 │   └── synthetic_vs_real.png           # Accuracy comparison chart
+│   ├── model_comparison_accuracy.png   # Four-model accuracy chart
+│   ├── model_comparison_time.png       # Four-model training time chart
+│   └── all_confusion_matrices.png      # All four confusion matrices
 │
 ├── report/
-│   └── AI_SOC_Report_Final.docx        # Full project report
+│   └── AI_SOC_Report_Final.docx
 │
-├── app.py                              # CLI SOC alert triage system
-├── requirements.txt                    # Python dependencies
-├── README.md                           # Project documentation
+├── app.py
+├── requirements.txt
+├── README.md
 └── .gitignore
 ```
 
@@ -295,6 +359,7 @@ AI-SOC-Alert-Framework/
 | 🔍 **Feature Importance Analysis** | Identifies which signals most strongly predict threat severity |
 | 📉 **Workload Reduction Modelling** | Quantifies the operational impact on analyst bandwidth |
 | 🌍 **Real-World Validated** | Tested against 175,341 records from the UNSW-NB15 benchmark dataset |
+| 🧪 **Evidence-Based Model Selection** | Random Forest selected after benchmarking 4 algorithms |
 
 ---
 
@@ -336,6 +401,11 @@ jupyter notebook notebooks/soc_alert_ml.ipynb
 jupyter notebook notebooks/real_data_test.ipynb
 ```
 
+### 6. Open the Model Comparison Notebook
+```bash
+jupyter notebook notebooks/model_comparison.ipynb
+```
+
 ---
 
 ## 📋 Requirements
@@ -344,6 +414,7 @@ jupyter notebook notebooks/real_data_test.ipynb
 pandas
 numpy
 scikit-learn
+xgboost
 matplotlib
 seaborn
 jupyter
@@ -356,7 +427,8 @@ joblib
 
 ## 🧑‍💻 Skills Demonstrated
 
-- ✅ Machine Learning Classification (Random Forest)
+- ✅ Machine Learning Classification (Random Forest, XGBoost, Decision Tree, Logistic Regression)
+- ✅ Evidence-Based Model Selection via Benchmark Comparison
 - ✅ Real-World Dataset Validation (UNSW-NB15 — 175,341 records)
 - ✅ Feature Engineering & Cross-Dataset Column Mapping
 - ✅ SOC Alert Triage Logic & Prioritization
@@ -373,8 +445,7 @@ joblib
 
 - 🔗 Integration with SIEM platforms (Splunk, Elastic Security, IBM QRadar)
 - 🧠 Explore Deep Learning models (LSTM for temporal alert sequences)
-- 🌲 Benchmark against XGBoost, LightGBM, and ensemble methods
-- 🌐 REST API wrapper for SIEM/SOAR platform integration
+- 🌐 REST API / Flask web interface for SIEM/SOAR platform integration
 - 📊 Real-time dashboard for live SOC monitoring
 - 🗂️ Expand validation to CICIDS and additional benchmark datasets
 
@@ -407,6 +478,6 @@ joblib
 ⭐ **If you found this project useful, consider giving it a star!** ⭐
 
 *Built independently with a focus on practical SOC automation using machine learning.*  
-*Validated against 175,341 real-world network records from the UNSW-NB15 benchmark dataset.*
+*Validated against 175,341 real-world network records · 4 models benchmarked · Random Forest selected on evidence.*
 
 </div>
