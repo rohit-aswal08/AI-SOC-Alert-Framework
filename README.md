@@ -338,7 +338,7 @@ AI-SOC-Alert-Framework/
 │   └── all_confusion_matrices.png      # All four confusion matrices
 │
 ├── report/
-│   └── AI_SOC_Report_Final.docx
+│   └── AI_SOC_Report.pdf
 │
 ├── app.py
 ├── requirements.txt
